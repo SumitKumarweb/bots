@@ -10,48 +10,89 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="style.css" />
-    <title>Chat app</title>
+    <title>Chat Room</title>
   </head>
   <body>
-    <h1 class="title">Chat here💬</h1>
-    <div class="login" id="login">
-      <input type="text" id="username" placeholder="Enter your name" />
-      <button id="login-button">Login</button>
-    </div>
-    <div class="main" id="main" style="display: none;">
-      <div class="name">
-        <span><i class="far fa-user"></i></span>
-        <input
-          type="text"
-          id="name-input"
-          class="name-input"
-          value="anonymous"
-          maxlength="20"
-          placeholder="message here"
-        />
+    <div class="main-body">
+      <div class="section">
+        <script>
+          for (let i = 0; i < 200; i++) {
+            document.write("<span></span>");
+          }
+        </script>
+        <div class="signin">
+          <section id="title">
+            <h1 class="text-shadow">-- Shadow Room--</h1>
+          </section>
+          <div class="login" id="login">
+            <div class="input__container">
+              <div class="shadow__input"></div>
+              <button class="input__button__shadow">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="#000000"
+                  width="20px"
+                  height="20px"
+                >
+                  <path d="M0 0h24v24H0z" fill="none"></path>
+                  <path
+                    d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
+                  ></path>
+                </svg>
+              </button>
+              <input
+                type="text"
+                id="username"
+                name="username"
+                class="input__search"
+                placeholder="Enter username"
+              />
+            </div>
+
+            <button class="btnmain" id="login-button">Login</button>
+          </div>
+
+          <div class="main" id="main" style="display: none">
+            <div class="name">
+              <img src="./profile.jpg" alt="" id="profile" />
+              <input
+                type="text"
+                id="name-input"
+                class="name-input"
+                value="anonymous"
+                maxlength="20"
+                placeholder="Message here"
+              />
+            </div>
+
+            <ul class="message-container" id="message-container"></ul>
+            <form class="message-form" id="message-form">
+              <input
+                type="text"
+                name="message"
+                id="message-input"
+                class="message-input"
+                placeholder="Message"
+              />
+              <button type="submit" class="send-button">
+                <i class="fas fa-paper-plane"></i>
+              </button>
+            </form>
+          </div>
+          <h3 class="clients-total" id="client-total">Total clients: 2</h3>
+        </div>
       </div>
-      <ul class="message-container" id="message-container"></ul>
-      <form class="message-form" id="message-form">
-        <input
-          type="text"
-          name="message"
-          id="message-input"
-          class="message-input"
-          placeholder="Message"
-        />
-        <div class="v-divider"></div>
-        <button type="submit" class="send-button">
-          send <span><i class="fas fa-paper-plane"></i></span>
-        </button>
-      </form>
     </div>
-    <h3 class="clients-total" id="client-total">Total clients: 2</h3>
+
     <script src="/socket.io/socket.io.js"></script>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.28.0/moment.min.js"
       integrity="sha512-Q1f3TS3vSt1jQ8AwP2OuenztnLU6LwxgyyYOG1jgMW/cbEMHps/3wjvnl1P3WTrF3chJUWEoxDUEjMxDV8pujg=="
       crossorigin="anonymous"
     ></script>
+    <script></script>
+
     <script src="main.js"></script>
   </body>
 </html>
